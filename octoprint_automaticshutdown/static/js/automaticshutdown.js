@@ -9,6 +9,7 @@ $(function() {
         // See https://github.com/sciactive/pnotify/issues/141
         PNotify.prototype.options.confirm.buttons = [];
         self.timeoutPopupText = gettext('Shutting down in ');
+        self.temperaturePopupText = gettext('Waiting for Hotend to cool down...\n');
         self.timeoutPopupOptions = {
             title: gettext('System Shutdown'),
             type: 'notice',
@@ -81,6 +82,23 @@ $(function() {
                     if (typeof self.timeoutPopup != "undefined") {
                         self.timeoutPopup.remove();
                         self.timeoutPopup = undefined;
+                    }
+                }
+            } else {
+                if (data.type == "temperature") {
+                    if ((data.current_temp != null) && (data.current_temp > 0)) {
+                        self.timeoutPopupOptions.text = self.temperaturePopupText + data.current_temp + " &#176;C / " + data.target_temp + " &#176;C";
+                        if (typeof self.timeoutPopup != "undefined") {
+                            self.timeoutPopup.update(self.timeoutPopupOptions);
+                        } else {
+                            self.timeoutPopup = new PNotify(self.timeoutPopupOptions);
+                            self.timeoutPopup.get().on('pnotify.cancel', function() {self.abortShutdown(true);});
+                        }
+                    } else {
+                        if (typeof self.timeoutPopup != "undefined") {
+                            self.timeoutPopup.remove();
+                            self.timeoutPopup = undefined;
+                        }
                     }
                 }
             }
