@@ -14,20 +14,20 @@ plugin_package = "octoprint_automaticshutdown"
 plugin_name = "OctoPrint-AutomaticShutdown"
 
 # The plugin's version. Can be overwritten within OctoPrint's internal data via __plugin_version__ in the plugin module
-plugin_version = "0.1.4"
+plugin_version = "0.1.5"
 
 # The plugin's description. Can be overwritten within OctoPrint's internal data via __plugin_description__ in the plugin
 # module
 plugin_description = "Enables the system to be automatically shut down after a print is finished"
 
 # The plugin's author. Can be overwritten within OctoPrint's internal data via __plugin_author__ in the plugin module
-plugin_author = "Nicanor Romero Venier"
+plugin_author = "L. Kruse based on the plugin from Nicanor Romero Venier"
 
 # The plugin's author's mail address.
-plugin_author_email = "nicanor.romerovenier@bq.com"
+plugin_author_email = ""
 
 # The plugin's homepage URL. Can be overwritten within OctoPrint's internal data via __plugin_url__ in the plugin module
-plugin_url = "https://github.com/OctoPrint/OctoPrint-AutomaticShutdown"
+plugin_url = "https://github.com/AngryBananer/OctoPrint-AutomaticShutdown"
 
 # The plugin's license. Can be overwritten within OctoPrint's internal data via __plugin_license__ in the plugin module
 plugin_license = "AGPLv3"
