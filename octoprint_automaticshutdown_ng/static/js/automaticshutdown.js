@@ -39,7 +39,7 @@ $(function() {
         self.onAutomaticShutdownEvent = function() {
             if (self.automaticShutdownEnabled()) {
                 $.ajax({
-                    url: API_BASEURL + "plugin/automaticshutdown",
+                    url: API_BASEURL + "plugin/automaticshutdown_ng",
                     type: "POST",
                     dataType: "json",
                     data: JSON.stringify({
@@ -49,7 +49,7 @@ $(function() {
                 })
             } else {
                 $.ajax({
-                    url: API_BASEURL + "plugin/automaticshutdown",
+                    url: API_BASEURL + "plugin/automaticshutdown_ng",
                     type: "POST",
                     dataType: "json",
                     data: JSON.stringify({
@@ -63,7 +63,7 @@ $(function() {
         self.automaticShutdownEnabled.subscribe(self.onAutomaticShutdownEvent, self);
 
         self.onDataUpdaterPluginMessage = function(plugin, data) {
-            if (plugin != "automaticshutdown") {
+            if (plugin != "automaticshutdown_ng") {
                 return;
             }
 
@@ -108,7 +108,7 @@ $(function() {
             self.timeoutPopup.remove();
             self.timeoutPopup = undefined;
             $.ajax({
-                url: API_BASEURL + "plugin/automaticshutdown",
+                url: API_BASEURL + "plugin/automaticshutdown_ng",
                 type: "POST",
                 dataType: "json",
                 data: JSON.stringify({

@@ -237,7 +237,7 @@ class AutomaticshutdownPlugin(octoprint.plugin.TemplatePlugin,
 
     def get_update_information(self):
         return dict(
-            automaticshutdown=dict(
+            automaticshutdown_ng=dict(
                 displayName="Automatic Shutdown",
                 displayVersion=self._plugin_version,
 
