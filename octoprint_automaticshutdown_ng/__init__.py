@@ -222,7 +222,7 @@ class AutomaticshutdownPlugin(octoprint.plugin.TemplatePlugin,
             abortTimeout=30,
             rememberCheckBox=False,
             lastCheckBoxValue=False,
-            awaitHotendTemp=False,
+            awaitHotendTemp=True,
             maxHotendTemp=50
         )
 
